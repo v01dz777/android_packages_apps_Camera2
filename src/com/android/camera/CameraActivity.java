@@ -2187,7 +2187,9 @@ public class CameraActivity extends QuickActivity
         if (mModeListView != null) {
             mModeListView.setVisibilityChangedListener(null);
         }
-        mDevicePlugin.onDestroy();
+        if (mDevicePlugin != null) {
+            mDevicePlugin.onDestroy();
+        }
         mCameraController = null;
         mSettingsManager = null;
         mOrientationManager = null;
